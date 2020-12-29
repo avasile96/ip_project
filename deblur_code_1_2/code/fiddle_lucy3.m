@@ -162,7 +162,7 @@ axis square; title('Inferred kernel');
 if SAVE_TO_DISK
   
   % save kernel
-  ExportFig(h,[file_name,'_kernel']);
+  ExportFig(h.Number,[file_name,'_kernel']);
   % save blurry
   imwrite(uint8(obs_im),[file_name,'_blurry.jpg'],'jpg','Quality',100);
   % save blurry

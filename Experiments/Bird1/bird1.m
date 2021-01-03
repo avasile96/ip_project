@@ -6,7 +6,7 @@ clear;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % User selected region (xmin xmax ymin ymax)
 %AXIS = [103   504   268   502]; %people
-AXIS = [241   391   171   271]; %bird
+AXIS = [417   1257  314   944]; %bird
 % max size of blur kernel
 BLUR_KERNEL_SIZE = 35;
 % inital value of kernel
@@ -19,7 +19,7 @@ FIRST_INIT_MODE_BLUR = 'hbar';
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % filename of image to deblur
-obs_im = imread('C:\Users\52331\Documents\MATLAB\IP_Project/images/bird.png');  
+obs_im = imread('D:\Uni\IP\Project\ip_project\deblur_code_1_2\images\ian1.jpg');  
 
 % downsample image before we start to keep image size managable
 PRESCALE = 1;
@@ -202,14 +202,14 @@ IMAGE_RECONSTRUCTION = 'lucy';
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 if strcmp(CAMERA_TYPE,'unknown')
   if strcmp(PRIOR_TYPE,'street')
-    prior_name = ['C:\Users\52331\Documents\MATLAB\IP_Project/priors/linear_street_',num2str(IMAGE_COMPONENTS)];
+    prior_name = ['D:\Uni\IP\Project\ip_project\deblur_code_1_2\priors\linear_street_',num2str(IMAGE_COMPONENTS)];
   elseif strcmp(PRIOR_TYPE,'whiteboard')
-    prior_name = ['C:\Users\52331\Documents\MATLAB\IP_Project/priors/linear_whiteboard_',num2str(IMAGE_COMPONENTS)];
+    prior_name = ['D:\Uni\IP\Project\ip_project\deblur_code_1_2\priors\linear_whiteboard_',num2str(IMAGE_COMPONENTS)];
   else
     error('Unknown prior type');
   end
 else
-  prior_name = ['C:\Users\52331\Documents\MATLAB\IP_Project/priors/',CAMERA_TYPE,'_street_',num2str(IMAGE_COMPONENTS)];
+  prior_name = ['D:\Uni\IP\Project\ip_project\deblur_code_1_2\priors\',CAMERA_TYPE,'_street_',num2str(IMAGE_COMPONENTS)];
 end
 load(prior_name);
 
